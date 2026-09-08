@@ -1,0 +1,2174 @@
+{
+  "baseline_a_naive": [
+    {
+      "problem_id": "autoscaler_oscillation",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_threshold_autoscaling",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -10.3,
+          "detail": "MAE=10.30 vs threshold 6.5 (queue history sample: [10.0, 10.0, 24.0, 36.0, 46.0, 54.0, 60.0, 64.0, 66.0, 66.0, 64.0, 60.0])",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Threshold-Based Autoscaling', domain=software_engineering): Adjust capacity by a fixed step whenever a monitored quantity crosses a fixed high/low threshold."
+        }
+      ]
+    },
+    {
+      "problem_id": "streaming_sample",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_materialize_then_sample",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -103.37971687316895,
+          "detail": "valid=True peak_mem=103.38MB (limit 20.0MB), n=3000000, k=200",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: sampling a representative subset from a stream of unknown or unbounded length; propagating information through repeated random local contact; achieving robustness to random node or participant failure without central coordination. Candidate mechanism (abstracted from 'Collect-Then-Sample', domain=software_engineering): Materialize the entire input into memory, then sample uniformly from the materialized collection."
+        }
+      ]
+    },
+    {
+      "problem_id": "warehouse_robot_picking",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_nearest_neighbor_dispatch",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -1907,
+          "detail": "total_distance=1907ft over 12 stops (limit 1700ft)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: minimizing total travel distance by servicing requests in positional order; storing and retrieving values by direct indexed position; distributing decision making so no single point of failure exists. Candidate mechanism (abstracted from 'Nearest-Request-First Dispatch', domain=software_engineering): Always move to whichever pending request minimizes immediate distance from the current position."
+        }
+      ]
+    },
+    {
+      "problem_id": "server_bin_packing",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_first_fit_decreasing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -20.0,
+          "detail": "makespan=20.0 (optimal=17, limit 18), loads=[20.0, 15.0, 15.0]",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'First-Fit-Decreasing Bin Packing', domain=software_engineering): Sort items by decreasing size; place each item greedily into the currently-best-fitting bin; never reconsider a placement."
+        }
+      ]
+    },
+    {
+      "problem_id": "replication_broadcast",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_central_fanout_broadcast",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": 0.075,
+          "detail": "coverage=7.50% (3/40 nodes), limit 85%",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: achieving robustness to random node or participant failure without central coordination; maintaining a target value despite external disturbances via corrective feedback; storing and retrieving values by direct indexed position. Candidate mechanism (abstracted from 'Central Fan-Out Broadcast', domain=software_engineering): The origin node sends the update directly to every other node in one round; there is no retry or relay by recipients."
+        }
+      ]
+    },
+    {
+      "problem_id": "network_load_diffusion",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_no_rebalancing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -217.94494717703367,
+          "detail": "stdev=217.9 (limit 60.0), conserved_total=True",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Static Assignment, No Rebalancing', domain=software_engineering): Assign each unit of load to a server once via a fixed rule (e.g. a hash); never re-examine or rebalance the assignment afterward, regardless of how uneven load becomes."
+        }
+      ]
+    },
+    {
+      "problem_id": "starvation_free_scheduling",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_strict_priority_queue",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -3000,
+          "detail": "important_task_wait=inf ticks (limit 50), served_tick=None",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding worst case wait time for low priority requesters; converting a continuous physical process into a discrete control rule; processing each item exactly once with bounded memory. Candidate mechanism (abstracted from 'Strict Priority Queue Scheduling', domain=software_engineering): Maintain tasks in strict priority order; always dispatch the highest-priority ready task; priority never changes while a task waits."
+        }
+      ]
+    },
+    {
+      "problem_id": "adaptive_routing",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_static_shortest_path",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -20.0,
+          "detail": "avg_cost_last_50_trips=20.00 (limit 8.0)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Precomputed Static Shortest-Path Table', domain=software_engineering): Compute the globally optimal [domain-specific term removed] once from a fixed snapshot of costs, then reuse it for all future requests without updating it."
+        }
+      ]
+    },
+    {
+      "problem_id": "anomaly_detection_no_labels",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_zscore_outlier",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": 0.0,
+          "detail": "detection_rate=0.00% (need >=90%), false_positive_rate=0.00% (need <=20%)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: detecting anomalies by characterizing what is normal rather than what is abnormal; generating negative examples that do not match any known good pattern; accumulating past error over time to eliminate steady state offset. Candidate mechanism (abstracted from 'Z-Score Outlier Detection', domain=software_engineering): Fit mean and [domain-specific term removed] of a single summary statistic from normal examples; flag new values whose [domain-specific term removed] exceeds a fixed threshold."
+        }
+      ]
+    },
+    {
+      "problem_id": "producer_consumer_oscillation",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_reactive_worker_step",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -105.08687529403174,
+          "detail": "late_stage_amplitude=105.09 (limit 5.0), stdev=22.47",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a moving population near a stable equilibrium; selecting survivors probabilistically in proportion to fitness; converting a continuous physical process into a discrete control rule. Candidate mechanism (abstracted from 'Reactive One-Step Worker Adjustment', domain=software_engineering): Each tick, add one unit of capacity if the monitored [domain-specific term removed] grew since last tick, remove one unit if it shrank; the adjustment rule has no term limiting growth as capacity nears a ceiling."
+        }
+      ]
+    },
+    {
+      "problem_id": "admission_control_congestion_collapse",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_admit_all_retry",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": 960.0,
+          "detail": "total_completed=960.0 over 150 ticks (need >=1300)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: avoiding congestive collapse where throughput drops under overload; limiting admission into a system to match downstream service capacity; minimizing total travel distance by servicing requests in positional order. Candidate mechanism (abstracted from 'Admit-All With Client Retry', domain=software_engineering): Accept every request on arrival regardless of current load; rely on downstream [domain-specific term removed]s and client retries to eventually get through."
+        }
+      ]
+    },
+    {
+      "problem_id": "stale_value_consensus",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_last_write_wins",
+          "card_domain": "software_engineering",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": 0.0,
+          "detail": "accuracy=0% (0/20 scenarios), need >=90%",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: tolerating a minority of stale or delayed participants; looking up a value quickly by repeatedly halving a sorted search range; letting a signal evaporate over time so stale information is forgotten. Candidate mechanism (abstracted from 'Last-Write-Wins Conflict Resolution', domain=software_engineering): Among conflicting reported values, keep whichever carries the latest [domain-specific term removed] and discard the others; never consult how many [domain-specific term removed]s hold each value."
+        }
+      ]
+    },
+    {
+      "problem_id": "naive_sufficient_lookup",
+      "condition": "baseline_a_naive",
+      "passed": true,
+      "winning_card_id": "cs_binary_search",
+      "winning_card_domain": "computer_science",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "cs_binary_search",
+          "card_domain": "computer_science",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": true,
+          "score": -15.766666666666667,
+          "detail": "avg_comparisons=15.8 (limit 25), correct=30/30",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: looking up a value quickly by repeatedly halving a sorted search range; exploring a large combinatorial search space without exhaustive enumeration; resolving conflicting values by consulting a majority rather than the most recent. Candidate mechanism (abstracted from 'Binary Search', domain=computer_science): Given a sorted, randomly-indexable collection and a target value, find it (or determine its absence) in O([domain-specific term removed]) comparisons by repeatedly comparing against the [domain-specific term removed] of the current range and discarding the half that cannot contain the target."
+        }
+      ]
+    },
+    {
+      "problem_id": "impossible_sort_probe",
+      "condition": "baseline_a_naive",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "cs_binary_search",
+          "card_domain": "computer_science",
+          "retrieval_score": 1.0,
+          "applicable": true,
+          "passed": false,
+          "score": -217,
+          "detail": "comparisons=217 (impossible budget <= 50), correctly_sorted=True",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Binary Search', domain=computer_science): Given a sorted, randomly-indexable collection and a target value, find it (or determine its absence) in O([domain-specific term removed]) comparisons by repeatedly comparing against the [domain-specific term removed] of the current range and discarding the half that cannot contain the target."
+        }
+      ]
+    }
+  ],
+  "rag_top1": [
+    {
+      "problem_id": "autoscaler_oscillation",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_reactive_worker_step",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.09756497879363352,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Reactive One-Step Worker Adjustment', domain=software_engineering): Each tick, add one unit of capacity if the monitored [domain-specific term removed] grew since last tick, remove one unit if it shrank; the adjustment rule has no term limiting growth as capacity nears a ceiling."
+        }
+      ]
+    },
+    {
+      "problem_id": "streaming_sample",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_materialize_then_sample",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.16242138886637827,
+          "applicable": true,
+          "passed": false,
+          "score": -103.37759780883789,
+          "detail": "valid=True peak_mem=103.38MB (limit 20.0MB), n=3000000, k=200",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: sampling a representative subset from a stream of unknown or unbounded length; propagating information through repeated random local contact; achieving robustness to random node or participant failure without central coordination. Candidate mechanism (abstracted from 'Collect-Then-Sample', domain=software_engineering): Materialize the entire input into memory, then sample uniformly from the materialized collection."
+        }
+      ]
+    },
+    {
+      "problem_id": "warehouse_robot_picking",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_nearest_neighbor_dispatch",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.14430540872733463,
+          "applicable": true,
+          "passed": false,
+          "score": -1907,
+          "detail": "total_distance=1907ft over 12 stops (limit 1700ft)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: minimizing total travel distance by servicing requests in positional order; storing and retrieving values by direct indexed position; distributing decision making so no single point of failure exists. Candidate mechanism (abstracted from 'Nearest-Request-First Dispatch', domain=software_engineering): Always move to whichever pending request minimizes immediate distance from the current position."
+        }
+      ]
+    },
+    {
+      "problem_id": "server_bin_packing",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_first_fit_decreasing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.11963721470888236,
+          "applicable": true,
+          "passed": false,
+          "score": -20.0,
+          "detail": "makespan=20.0 (optimal=17, limit 18), loads=[20.0, 15.0, 15.0]",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'First-Fit-Decreasing Bin Packing', domain=software_engineering): Sort items by decreasing size; place each item greedily into the currently-best-fitting bin; never reconsider a placement."
+        }
+      ]
+    },
+    {
+      "problem_id": "replication_broadcast",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_central_fanout_broadcast",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.17272535506462747,
+          "applicable": true,
+          "passed": false,
+          "score": 0.075,
+          "detail": "coverage=7.50% (3/40 nodes), limit 85%",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: achieving robustness to random node or participant failure without central coordination; maintaining a target value despite external disturbances via corrective feedback; storing and retrieving values by direct indexed position. Candidate mechanism (abstracted from 'Central Fan-Out Broadcast', domain=software_engineering): The origin node sends the update directly to every other node in one round; there is no retry or relay by recipients."
+        }
+      ]
+    },
+    {
+      "problem_id": "network_load_diffusion",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_no_rebalancing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.10525375506109878,
+          "applicable": true,
+          "passed": false,
+          "score": -217.94494717703367,
+          "detail": "stdev=217.9 (limit 60.0), conserved_total=True",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Static Assignment, No Rebalancing', domain=software_engineering): Assign each unit of load to a server once via a fixed rule (e.g. a hash); never re-examine or rebalance the assignment afterward, regardless of how uneven load becomes."
+        }
+      ]
+    },
+    {
+      "problem_id": "starvation_free_scheduling",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_strict_priority_queue",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.4455022166179061,
+          "applicable": true,
+          "passed": false,
+          "score": -3000,
+          "detail": "important_task_wait=inf ticks (limit 50), served_tick=None",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding worst case wait time for low priority requesters; converting a continuous physical process into a discrete control rule; processing each item exactly once with bounded memory. Candidate mechanism (abstracted from 'Strict Priority Queue Scheduling', domain=software_engineering): Maintain tasks in strict priority order; always dispatch the highest-priority ready task; priority never changes while a task waits."
+        }
+      ]
+    },
+    {
+      "problem_id": "adaptive_routing",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_static_shortest_path",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.057435904933887595,
+          "applicable": true,
+          "passed": false,
+          "score": -20.0,
+          "detail": "avg_cost_last_50_trips=20.00 (limit 8.0)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Precomputed Static Shortest-Path Table', domain=software_engineering): Compute the globally optimal [domain-specific term removed] once from a fixed snapshot of costs, then reuse it for all future requests without updating it."
+        }
+      ]
+    },
+    {
+      "problem_id": "anomaly_detection_no_labels",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_zscore_outlier",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.11382517580471137,
+          "applicable": true,
+          "passed": false,
+          "score": 0.0,
+          "detail": "detection_rate=0.00% (need >=90%), false_positive_rate=0.00% (need <=20%)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: detecting anomalies by characterizing what is normal rather than what is abnormal; generating negative examples that do not match any known good pattern; accumulating past error over time to eliminate steady state offset. Candidate mechanism (abstracted from 'Z-Score Outlier Detection', domain=software_engineering): Fit mean and [domain-specific term removed] of a single summary statistic from normal examples; flag new values whose [domain-specific term removed] exceeds a fixed threshold."
+        }
+      ]
+    },
+    {
+      "problem_id": "producer_consumer_oscillation",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_reactive_worker_step",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.17140440335308768,
+          "applicable": true,
+          "passed": false,
+          "score": -105.08687529403174,
+          "detail": "late_stage_amplitude=105.09 (limit 5.0), stdev=22.47",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a moving population near a stable equilibrium; selecting survivors probabilistically in proportion to fitness; converting a continuous physical process into a discrete control rule. Candidate mechanism (abstracted from 'Reactive One-Step Worker Adjustment', domain=software_engineering): Each tick, add one unit of capacity if the monitored [domain-specific term removed] grew since last tick, remove one unit if it shrank; the adjustment rule has no term limiting growth as capacity nears a ceiling."
+        }
+      ]
+    },
+    {
+      "problem_id": "admission_control_congestion_collapse",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_admit_all_retry",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.08229752743002822,
+          "applicable": true,
+          "passed": false,
+          "score": 960.0,
+          "detail": "total_completed=960.0 over 150 ticks (need >=1300)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: avoiding congestive collapse where throughput drops under overload; limiting admission into a system to match downstream service capacity; minimizing total travel distance by servicing requests in positional order. Candidate mechanism (abstracted from 'Admit-All With Client Retry', domain=software_engineering): Accept every request on arrival regardless of current load; rely on downstream [domain-specific term removed]s and client retries to eventually get through."
+        }
+      ]
+    },
+    {
+      "problem_id": "stale_value_consensus",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_last_write_wins",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.2883257840359129,
+          "applicable": true,
+          "passed": false,
+          "score": 0.0,
+          "detail": "accuracy=0% (0/20 scenarios), need >=90%",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: tolerating a minority of stale or delayed participants; looking up a value quickly by repeatedly halving a sorted search range; letting a signal evaporate over time so stale information is forgotten. Candidate mechanism (abstracted from 'Last-Write-Wins Conflict Resolution', domain=software_engineering): Among conflicting reported values, keep whichever carries the latest [domain-specific term removed] and discard the others; never consult how many [domain-specific term removed]s hold each value."
+        }
+      ]
+    },
+    {
+      "problem_id": "naive_sufficient_lookup",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_linear_scan",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.1329023452122388,
+          "applicable": true,
+          "passed": false,
+          "score": -69500.36666666667,
+          "detail": "avg_comparisons=69500.4 (limit 25), correct=30/30",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: looking up a value quickly by repeatedly halving a sorted search range; exploring a large combinatorial search space without exhaustive enumeration; resolving conflicting values by consulting a majority rather than the most recent. Candidate mechanism (abstracted from 'Linear Scan Lookup', domain=software_engineering): Check membership by comparing the target against every element in sequence until found or exhausted; O(n) comparisons worst case."
+        }
+      ]
+    },
+    {
+      "problem_id": "impossible_sort_probe",
+      "condition": "rag_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_linear_scan",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.04248403857180332,
+          "applicable": true,
+          "passed": false,
+          "score": -1225,
+          "detail": "comparisons=1225 (impossible budget <= 50), correctly_sorted=True",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Linear Scan Lookup', domain=software_engineering): Check membership by comparing the target against every element in sequence until found or exhausted; O(n) comparisons worst case."
+        }
+      ]
+    }
+  ],
+  "rag_convergence": [
+    {
+      "problem_id": "autoscaler_oscillation",
+      "condition": "rag_convergence",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 5,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_reactive_worker_step",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.09756497879363352,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Reactive One-Step Worker Adjustment', domain=software_engineering): Each tick, add one unit of capacity if the monitored [domain-specific term removed] grew since last tick, remove one unit if it shrank; the adjustment rule has no term limiting growth as capacity nears a ceiling."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_threshold_autoscaling",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.06632056423176458,
+          "applicable": true,
+          "passed": false,
+          "score": -10.3,
+          "detail": "MAE=10.30 vs threshold 6.5 (queue history sample: [10.0, 10.0, 24.0, 36.0, 46.0, 54.0, 60.0, 64.0, 66.0, 66.0, 64.0, 60.0])",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Threshold-Based Autoscaling', domain=software_engineering): Adjust capacity by a fixed step whenever a monitored quantity crosses a fixed high/low threshold."
+        },
+        {
+          "rank": 2,
+          "card_id": "cs_binary_search",
+          "card_domain": "computer_science",
+          "retrieval_score": 0.06270631818161616,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Binary Search', domain=computer_science): Given a sorted, randomly-indexable collection and a target value, find it (or determine its absence) in O([domain-specific term removed]) comparisons by repeatedly comparing against the [domain-specific term removed] of the current range and discarding the half that cannot contain the target."
+        },
+        {
+          "rank": 3,
+          "card_id": "transportation_ramp_metering",
+          "card_domain": "transportation_engineering",
+          "retrieval_score": 0.02596494319792432,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Highway Ramp Metering', domain=transportation_engineering): Given a shared downstream resource with a known service rate, where accepting every incoming request immediately causes throughput to collapse under overload (a [domain-specific term removed] from thrashing/contention), admit requests at a rate that matches downstream capacity and hold or reject the rest at the point of entry, rather than admitting everything and letting congestion form inside the system. This keeps achieved throughput near capacity even as offered load grows far past it."
+        },
+        {
+          "rank": 4,
+          "card_id": "ecology_predator_prey_damping",
+          "card_domain": "ecology",
+          "retrieval_score": 0.02421347903513557,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Predator-Prey Dynamics and Carrying Capacity', domain=ecology): Given two coupled quantities that each grow or shrink purely in reaction to the other's current level (producing sustained oscillation), stabilize the system by adding a self-limiting term to each population's growth rule that caps its growth rate as it approaches a fixed capacity ceiling, independent of the other quantity's momentary level. This damps the reactive boom-bust cycle into a stable equilibrium."
+        }
+      ]
+    },
+    {
+      "problem_id": "streaming_sample",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "statistics_reservoir_sampling",
+      "winning_card_domain": "statistics",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_materialize_then_sample",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.16242138886637827,
+          "applicable": true,
+          "passed": false,
+          "score": -103.37759780883789,
+          "detail": "valid=True peak_mem=103.38MB (limit 20.0MB), n=3000000, k=200",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: sampling a representative subset from a stream of unknown or unbounded length; propagating information through repeated random local contact; achieving robustness to random node or participant failure without central coordination. Candidate mechanism (abstracted from 'Collect-Then-Sample', domain=software_engineering): Materialize the entire input into memory, then sample uniformly from the materialized collection."
+        },
+        {
+          "rank": 1,
+          "card_id": "statistics_reservoir_sampling",
+          "card_domain": "statistics",
+          "retrieval_score": 0.12997299446335,
+          "applicable": true,
+          "passed": true,
+          "score": -0.011688232421875,
+          "detail": "valid=True peak_mem=0.01MB (limit 20.0MB), n=3000000, k=200",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: sampling a representative subset from a stream of unknown or unbounded length; propagating information through repeated random local contact; achieving robustness to random node or participant failure without central coordination. Candidate mechanism (abstracted from 'Reservoir Sampling', domain=statistics): Given a sequence that can only be read once, in order, of unknown total length, produce a uniformly random subset of size k using O(k) memory: keep the first k items; for the i-th subsequent item, replace a uniformly chosen slot with probability k/(i+1), else discard the item. Never materialize the full sequence."
+        }
+      ]
+    },
+    {
+      "problem_id": "warehouse_robot_picking",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "logistics_elevator_scan",
+      "winning_card_domain": "operations_research",
+      "winning_cross_domain": true,
+      "num_attempts": 3,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_nearest_neighbor_dispatch",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.14430540872733463,
+          "applicable": true,
+          "passed": false,
+          "score": -1907,
+          "detail": "total_distance=1907ft over 12 stops (limit 1700ft)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: minimizing total travel distance by servicing requests in positional order; storing and retrieving values by direct indexed position; distributing decision making so no single point of failure exists. Candidate mechanism (abstracted from 'Nearest-Request-First Dispatch', domain=software_engineering): Always move to whichever pending request minimizes immediate distance from the current position."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_first_fit_decreasing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.027133226200903932,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: minimizing total travel distance by servicing requests in positional order; storing and retrieving values by direct indexed position; distributing decision making so no single point of failure exists. Candidate mechanism (abstracted from 'First-Fit-Decreasing Bin Packing', domain=software_engineering): Sort items by decreasing size; place each item greedily into the currently-best-fitting bin; never reconsider a placement."
+        },
+        {
+          "rank": 2,
+          "card_id": "logistics_elevator_scan",
+          "card_domain": "operations_research",
+          "retrieval_score": 0.026755280422469763,
+          "applicable": true,
+          "passed": true,
+          "score": -1357,
+          "detail": "total_distance=1357ft over 12 stops (limit 1700ft)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: minimizing total travel distance by servicing requests in positional order; storing and retrieving values by direct indexed position; distributing decision making so no single point of failure exists. Candidate mechanism (abstracted from 'SCAN / Elevator Servicing', domain=operations_research): Given pending requests at positions along a 1-D line and an agent that starts at some position, minimize total travel distance: sweep monotonically in the current direction, servicing every pending request encountered along the way, then reverse at the end of the line and sweep back. This bounds the worst-case back[domain-specific term removed]ing that a pure nearest-request-first rule suffers when requests keep appearing on alternating sides."
+        }
+      ]
+    },
+    {
+      "problem_id": "server_bin_packing",
+      "condition": "rag_convergence",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 5,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_first_fit_decreasing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.11963721470888236,
+          "applicable": true,
+          "passed": false,
+          "score": -20.0,
+          "detail": "makespan=20.0 (optimal=17, limit 18), loads=[20.0, 15.0, 15.0]",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'First-Fit-Decreasing Bin Packing', domain=software_engineering): Sort items by decreasing size; place each item greedily into the currently-best-fitting bin; never reconsider a placement."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_no_rebalancing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.08711245728157539,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Static Assignment, No Rebalancing', domain=software_engineering): Assign each unit of load to a server once via a fixed rule (e.g. a hash); never re-examine or rebalance the assignment afterward, regardless of how uneven load becomes."
+        },
+        {
+          "rank": 2,
+          "card_id": "se_zscore_outlier",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.03945550701367439,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Z-Score Outlier Detection', domain=software_engineering): Fit mean and [domain-specific term removed] of a single summary statistic from normal examples; flag new values whose [domain-specific term removed] exceeds a fixed threshold."
+        },
+        {
+          "rank": 3,
+          "card_id": "se_nearest_neighbor_dispatch",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.03510110816687919,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Nearest-Request-First Dispatch', domain=software_engineering): Always move to whichever pending request minimizes immediate distance from the current position."
+        },
+        {
+          "rank": 4,
+          "card_id": "se_admit_all_retry",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.027132733572299447,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Admit-All With Client Retry', domain=software_engineering): Accept every request on arrival regardless of current load; rely on downstream [domain-specific term removed]s and client retries to eventually get through."
+        }
+      ]
+    },
+    {
+      "problem_id": "replication_broadcast",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "epidemiology_sir_gossip",
+      "winning_card_domain": "epidemiology",
+      "winning_cross_domain": true,
+      "num_attempts": 3,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_central_fanout_broadcast",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.17272535506462747,
+          "applicable": true,
+          "passed": false,
+          "score": 0.075,
+          "detail": "coverage=7.50% (3/40 nodes), limit 85%",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: achieving robustness to random node or participant failure without central coordination; maintaining a target value despite external disturbances via corrective feedback; storing and retrieving values by direct indexed position. Candidate mechanism (abstracted from 'Central Fan-Out Broadcast', domain=software_engineering): The origin node sends the update directly to every other node in one round; there is no retry or relay by recipients."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_admit_all_retry",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.036973923763157786,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: achieving robustness to random node or participant failure without central coordination; maintaining a target value despite external disturbances via corrective feedback; storing and retrieving values by direct indexed position. Candidate mechanism (abstracted from 'Admit-All With Client Retry', domain=software_engineering): Accept every request on arrival regardless of current load; rely on downstream [domain-specific term removed]s and client retries to eventually get through."
+        },
+        {
+          "rank": 2,
+          "card_id": "epidemiology_sir_gossip",
+          "card_domain": "epidemiology",
+          "retrieval_score": 0.03366941428695932,
+          "applicable": true,
+          "passed": true,
+          "score": 1.0,
+          "detail": "coverage=100.00% (40/40 nodes), limit 85%",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: achieving robustness to random node or participant failure without central coordination; maintaining a target value despite external disturbances via corrective feedback; storing and retrieving values by direct indexed position. Candidate mechanism (abstracted from 'Epidemic Spread and Herd Coverage', domain=epidemiology): Given a population of nodes and one origin holding an update, where any node can be transiently unreachable in a given round and there is no reliable central broadcaster, propagate the update to (nearly) everyone by having every node that already holds the update forward it to a small number of random peers each round, repeated over multiple rounds. Reachability failures in one round are compensated for by further chances in subsequent rounds, so coverage approaches 100% probabilistically rather than requiring any single round to succeed."
+        }
+      ]
+    },
+    {
+      "problem_id": "network_load_diffusion",
+      "condition": "rag_convergence",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 5,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_no_rebalancing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.10525375506109878,
+          "applicable": true,
+          "passed": false,
+          "score": -217.94494717703367,
+          "detail": "stdev=217.9 (limit 60.0), conserved_total=True",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Static Assignment, No Rebalancing', domain=software_engineering): Assign each unit of load to a server once via a fixed rule (e.g. a hash); never re-examine or rebalance the assignment afterward, regardless of how uneven load becomes."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_admit_all_retry",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.03954700736063604,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Admit-All With Client Retry', domain=software_engineering): Accept every request on arrival regardless of current load; rely on downstream [domain-specific term removed]s and client retries to eventually get through."
+        },
+        {
+          "rank": 2,
+          "card_id": "se_materialize_then_sample",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.032696655915625684,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Collect-Then-Sample', domain=software_engineering): Materialize the entire input into memory, then sample uniformly from the materialized collection."
+        },
+        {
+          "rank": 3,
+          "card_id": "se_reactive_worker_step",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.03059547722239684,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Reactive One-Step Worker Adjustment', domain=software_engineering): Each tick, add one unit of capacity if the monitored [domain-specific term removed] grew since last tick, remove one unit if it shrank; the adjustment rule has no term limiting growth as capacity nears a ceiling."
+        },
+        {
+          "rank": 4,
+          "card_id": "se_central_fanout_broadcast",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.025245569141272205,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Central Fan-Out Broadcast', domain=software_engineering): The origin node sends the update directly to every other node in one round; there is no retry or relay by recipients."
+        }
+      ]
+    },
+    {
+      "problem_id": "starvation_free_scheduling",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "economics_congestion_pricing_aging",
+      "winning_card_domain": "economics",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_strict_priority_queue",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.4455022166179061,
+          "applicable": true,
+          "passed": false,
+          "score": -3000,
+          "detail": "important_task_wait=inf ticks (limit 50), served_tick=None",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding worst case wait time for low priority requesters; converting a continuous physical process into a discrete control rule; processing each item exactly once with bounded memory. Candidate mechanism (abstracted from 'Strict Priority Queue Scheduling', domain=software_engineering): Maintain tasks in strict priority order; always dispatch the highest-priority ready task; priority never changes while a task waits."
+        },
+        {
+          "rank": 1,
+          "card_id": "economics_congestion_pricing_aging",
+          "card_domain": "economics",
+          "retrieval_score": 0.07485233698279553,
+          "applicable": true,
+          "passed": true,
+          "score": -4,
+          "detail": "important_task_wait=4 ticks (limit 50), served_tick=4",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: bounding worst case wait time for low priority requesters; converting a continuous physical process into a discrete control rule; processing each item exactly once with bounded memory. Candidate mechanism (abstracted from 'Congestion Pricing and Willingness-to-Pay Allocation', domain=economics): Given many requesters competing for one shared resource, each with a base value and an arrival time, where serving strictly by fixed value or fixed class can starve some requesters indefinitely, allocate the resource each round to the requester with the highest effective bid, where effective bid = base value + (waiting time) * (escalation rate). This guarantees every requester's effective bid eventually dominates, bounding worst-case wait time, while still respecting relative value."
+        }
+      ]
+    },
+    {
+      "problem_id": "adaptive_routing",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "entomology_ant_colony",
+      "winning_card_domain": "entomology",
+      "winning_cross_domain": true,
+      "num_attempts": 5,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_static_shortest_path",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.057435904933887595,
+          "applicable": true,
+          "passed": false,
+          "score": -20.0,
+          "detail": "avg_cost_last_50_trips=20.00 (limit 8.0)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Precomputed Static Shortest-Path Table', domain=software_engineering): Compute the globally optimal [domain-specific term removed] once from a fixed snapshot of costs, then reuse it for all future requests without updating it."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_zscore_outlier",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.03342665196795699,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Z-Score Outlier Detection', domain=software_engineering): Fit mean and [domain-specific term removed] of a single summary statistic from normal examples; flag new values whose [domain-specific term removed] exceeds a fixed threshold."
+        },
+        {
+          "rank": 2,
+          "card_id": "transportation_ramp_metering",
+          "card_domain": "transportation_engineering",
+          "retrieval_score": 0.03271388477009897,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Highway Ramp Metering', domain=transportation_engineering): Given a shared downstream resource with a known service rate, where accepting every incoming request immediately causes throughput to collapse under overload (a [domain-specific term removed] from thrashing/contention), admit requests at a rate that matches downstream capacity and hold or reject the rest at the point of entry, rather than admitting everything and letting congestion form inside the system. This keeps achieved throughput near capacity even as offered load grows far past it."
+        },
+        {
+          "rank": 3,
+          "card_id": "se_admit_all_retry",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.018874929527449336,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Admit-All With Client Retry', domain=software_engineering): Accept every request on arrival regardless of current load; rely on downstream [domain-specific term removed]s and client retries to eventually get through."
+        },
+        {
+          "rank": 4,
+          "card_id": "entomology_ant_colony",
+          "card_domain": "entomology",
+          "retrieval_score": 0.017645614711147877,
+          "applicable": true,
+          "passed": true,
+          "score": -4.8,
+          "detail": "avg_cost_last_50_trips=4.80 (limit 8.0)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Ant Foraging and Stigmergic Trails', domain=entomology): Given a network whose edge costs change over time and must be routed over repeatedly, adapt routing without recomputing a full global shortest path each time: maintain a trail strength per edge; each trip, choose a path probabilistically favoring higher-trail edges, then reinforce the edges used in proportion to how good the trip was; evaporate all trail strengths slightly every round. This lets routing drift toward newly-cheap edges and away from newly-congested ones using only local, indirect feedback."
+        }
+      ]
+    },
+    {
+      "problem_id": "anomaly_detection_no_labels",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "immunology_negative_selection",
+      "winning_card_domain": "immunology",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_zscore_outlier",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.11382517580471137,
+          "applicable": true,
+          "passed": false,
+          "score": 0.0,
+          "detail": "detection_rate=0.00% (need >=90%), false_positive_rate=0.00% (need <=20%)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: detecting anomalies by characterizing what is normal rather than what is abnormal; generating negative examples that do not match any known good pattern; accumulating past error over time to eliminate steady state offset. Candidate mechanism (abstracted from 'Z-Score Outlier Detection', domain=software_engineering): Fit mean and [domain-specific term removed] of a single summary statistic from normal examples; flag new values whose [domain-specific term removed] exceeds a fixed threshold."
+        },
+        {
+          "rank": 1,
+          "card_id": "immunology_negative_selection",
+          "card_domain": "immunology",
+          "retrieval_score": 0.04128032396503504,
+          "applicable": true,
+          "passed": true,
+          "score": 0.915,
+          "detail": "detection_rate=100.00% (need >=90%), false_positive_rate=8.50% (need <=20%)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: detecting anomalies by characterizing what is normal rather than what is abnormal; generating negative examples that do not match any known good pattern; accumulating past error over time to eliminate steady state offset. Candidate mechanism (abstracted from 'Immune Negative Selection', domain=immunology): Given only examples of 'normal' patterns and no labeled examples of anomalies, detect novel anomalies as follows: generate a large population of random candidate detectors; discard any detector that matches (is too similar to) any normal training example; keep the surviving detectors. At test time, flag any new pattern that matches one or more surviving detectors as anomalous. This requires no labeled anomaly data and can catch structurally unusual patterns that a simple numeric threshold on summary statistics would miss."
+        }
+      ]
+    },
+    {
+      "problem_id": "producer_consumer_oscillation",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "ecology_predator_prey_damping",
+      "winning_card_domain": "ecology",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_reactive_worker_step",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.17140440335308768,
+          "applicable": true,
+          "passed": false,
+          "score": -105.08687529403174,
+          "detail": "late_stage_amplitude=105.09 (limit 5.0), stdev=22.47",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a moving population near a stable equilibrium; selecting survivors probabilistically in proportion to fitness; converting a continuous physical process into a discrete control rule. Candidate mechanism (abstracted from 'Reactive One-Step Worker Adjustment', domain=software_engineering): Each tick, add one unit of capacity if the monitored [domain-specific term removed] grew since last tick, remove one unit if it shrank; the adjustment rule has no term limiting growth as capacity nears a ceiling."
+        },
+        {
+          "rank": 1,
+          "card_id": "ecology_predator_prey_damping",
+          "card_domain": "ecology",
+          "retrieval_score": 0.09442508738265576,
+          "applicable": true,
+          "passed": true,
+          "score": -0.00019050094550543406,
+          "detail": "late_stage_amplitude=0.00 (limit 5.0), stdev=0.00",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a moving population near a stable equilibrium; selecting survivors probabilistically in proportion to fitness; converting a continuous physical process into a discrete control rule. Candidate mechanism (abstracted from 'Predator-Prey Dynamics and Carrying Capacity', domain=ecology): Given two coupled quantities that each grow or shrink purely in reaction to the other's current level (producing sustained oscillation), stabilize the system by adding a self-limiting term to each population's growth rule that caps its growth rate as it approaches a fixed capacity ceiling, independent of the other quantity's momentary level. This damps the reactive boom-bust cycle into a stable equilibrium."
+        }
+      ]
+    },
+    {
+      "problem_id": "admission_control_congestion_collapse",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "transportation_ramp_metering",
+      "winning_card_domain": "transportation_engineering",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_admit_all_retry",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.08229752743002822,
+          "applicable": true,
+          "passed": false,
+          "score": 960.0,
+          "detail": "total_completed=960.0 over 150 ticks (need >=1300)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: avoiding congestive collapse where throughput drops under overload; limiting admission into a system to match downstream service capacity; minimizing total travel distance by servicing requests in positional order. Candidate mechanism (abstracted from 'Admit-All With Client Retry', domain=software_engineering): Accept every request on arrival regardless of current load; rely on downstream [domain-specific term removed]s and client retries to eventually get through."
+        },
+        {
+          "rank": 1,
+          "card_id": "transportation_ramp_metering",
+          "card_domain": "transportation_engineering",
+          "retrieval_score": 0.0751195266457466,
+          "applicable": true,
+          "passed": true,
+          "score": 1460.0,
+          "detail": "total_completed=1460.0 over 150 ticks (need >=1300)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: avoiding congestive collapse where throughput drops under overload; limiting admission into a system to match downstream service capacity; minimizing total travel distance by servicing requests in positional order. Candidate mechanism (abstracted from 'Highway Ramp Metering', domain=transportation_engineering): Given a shared downstream resource with a known service rate, where accepting every incoming request immediately causes throughput to collapse under overload (a [domain-specific term removed] from thrashing/contention), admit requests at a rate that matches downstream capacity and hold or reject the rest at the point of entry, rather than admitting everything and letting congestion form inside the system. This keeps achieved throughput near capacity even as offered load grows far past it."
+        }
+      ]
+    },
+    {
+      "problem_id": "stale_value_consensus",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "social_choice_quorum_voting",
+      "winning_card_domain": "social_choice_theory",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_last_write_wins",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.2883257840359129,
+          "applicable": true,
+          "passed": false,
+          "score": 0.0,
+          "detail": "accuracy=0% (0/20 scenarios), need >=90%",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: tolerating a minority of stale or delayed participants; looking up a value quickly by repeatedly halving a sorted search range; letting a signal evaporate over time so stale information is forgotten. Candidate mechanism (abstracted from 'Last-Write-Wins Conflict Resolution', domain=software_engineering): Among conflicting reported values, keep whichever carries the latest [domain-specific term removed] and discard the others; never consult how many [domain-specific term removed]s hold each value."
+        },
+        {
+          "rank": 1,
+          "card_id": "social_choice_quorum_voting",
+          "card_domain": "social_choice_theory",
+          "retrieval_score": 0.11039867955219154,
+          "applicable": true,
+          "passed": true,
+          "score": 1.0,
+          "detail": "accuracy=100% (20/20 scenarios), need >=90%",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: tolerating a minority of stale or delayed participants; looking up a value quickly by repeatedly halving a sorted search range; letting a signal evaporate over time so stale information is forgotten. Candidate mechanism (abstracted from 'Majority Quorum Voting', domain=social_choice_theory): Given several participants reporting possibly conflicting values, where deciding by whichever value arrived last is vulnerable to network delay putting a stale or minority value last, decide instead by collecting reports from a [domain-specific term removed] (more than half) of participants and selecting the value held by the majority of that [domain-specific term removed]. This is robust to a minority of participants being delayed or holding stale values."
+        }
+      ]
+    },
+    {
+      "problem_id": "naive_sufficient_lookup",
+      "condition": "rag_convergence",
+      "passed": true,
+      "winning_card_id": "cs_binary_search",
+      "winning_card_domain": "computer_science",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_linear_scan",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.1329023452122388,
+          "applicable": true,
+          "passed": false,
+          "score": -69500.36666666667,
+          "detail": "avg_comparisons=69500.4 (limit 25), correct=30/30",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: looking up a value quickly by repeatedly halving a sorted search range; exploring a large combinatorial search space without exhaustive enumeration; resolving conflicting values by consulting a majority rather than the most recent. Candidate mechanism (abstracted from 'Linear Scan Lookup', domain=software_engineering): Check membership by comparing the target against every element in sequence until found or exhausted; O(n) comparisons worst case."
+        },
+        {
+          "rank": 1,
+          "card_id": "cs_binary_search",
+          "card_domain": "computer_science",
+          "retrieval_score": 0.06773683140380292,
+          "applicable": true,
+          "passed": true,
+          "score": -15.766666666666667,
+          "detail": "avg_comparisons=15.8 (limit 25), correct=30/30",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: looking up a value quickly by repeatedly halving a sorted search range; exploring a large combinatorial search space without exhaustive enumeration; resolving conflicting values by consulting a majority rather than the most recent. Candidate mechanism (abstracted from 'Binary Search', domain=computer_science): Given a sorted, randomly-indexable collection and a target value, find it (or determine its absence) in O([domain-specific term removed]) comparisons by repeatedly comparing against the [domain-specific term removed] of the current range and discarding the half that cannot contain the target."
+        }
+      ]
+    },
+    {
+      "problem_id": "impossible_sort_probe",
+      "condition": "rag_convergence",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 5,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_linear_scan",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.04248403857180332,
+          "applicable": true,
+          "passed": false,
+          "score": -1225,
+          "detail": "comparisons=1225 (impossible budget <= 50), correctly_sorted=True",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Linear Scan Lookup', domain=software_engineering): Check membership by comparing the target against every element in sequence until found or exhausted; O(n) comparisons worst case."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_nearest_neighbor_dispatch",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.042402238319941984,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Nearest-Request-First Dispatch', domain=software_engineering): Always move to whichever pending request minimizes immediate distance from the current position."
+        },
+        {
+          "rank": 2,
+          "card_id": "cs_binary_search",
+          "card_domain": "computer_science",
+          "retrieval_score": 0.0401863839520038,
+          "applicable": true,
+          "passed": false,
+          "score": -217,
+          "detail": "comparisons=217 (impossible budget <= 50), correctly_sorted=True",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Binary Search', domain=computer_science): Given a sorted, randomly-indexable collection and a target value, find it (or determine its absence) in O([domain-specific term removed]) comparisons by repeatedly comparing against the [domain-specific term removed] of the current range and discarding the half that cannot contain the target."
+        },
+        {
+          "rank": 3,
+          "card_id": "se_materialize_then_sample",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.038070272639497395,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Collect-Then-Sample', domain=software_engineering): Materialize the entire input into memory, then sample uniformly from the materialized collection."
+        },
+        {
+          "rank": 4,
+          "card_id": "statistics_reservoir_sampling",
+          "card_domain": "statistics",
+          "retrieval_score": 0.029065341588027743,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Reservoir Sampling', domain=statistics): Given a sequence that can only be read once, in order, of unknown total length, produce a uniformly random subset of size k using O(k) memory: keep the first k items; for the i-th subsequent item, replace a uniformly chosen slot with probability k/(i+1), else discard the item. Never materialize the full sequence."
+        }
+      ]
+    }
+  ],
+  "lcd_top1": [
+    {
+      "problem_id": "autoscaler_oscillation",
+      "condition": "lcd_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "sports_zone_defense",
+          "card_domain": "sports",
+          "retrieval_score": 0.6484762631147909,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Zone Defense', domain=sports): Assign responsibility by region rather than by specific target, handing off as the target crosses a region boundary."
+        }
+      ]
+    },
+    {
+      "problem_id": "streaming_sample",
+      "condition": "lcd_top1",
+      "passed": true,
+      "winning_card_id": "statistics_reservoir_sampling",
+      "winning_card_domain": "statistics",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "statistics_reservoir_sampling",
+          "card_domain": "statistics",
+          "retrieval_score": 0.6426745574894516,
+          "applicable": true,
+          "passed": true,
+          "score": -0.009654998779296875,
+          "detail": "valid=True peak_mem=0.01MB (limit 20.0MB), n=3000000, k=200",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: sampling a representative subset from a stream of unknown or unbounded length; propagating information through repeated random local contact; achieving robustness to random node or participant failure without central coordination. Candidate mechanism (abstracted from 'Reservoir Sampling', domain=statistics): Given a sequence that can only be read once, in order, of unknown total length, produce a uniformly random subset of size k using O(k) memory: keep the first k items; for the i-th subsequent item, replace a uniformly chosen slot with probability k/(i+1), else discard the item. Never materialize the full sequence."
+        }
+      ]
+    },
+    {
+      "problem_id": "warehouse_robot_picking",
+      "condition": "lcd_top1",
+      "passed": true,
+      "winning_card_id": "logistics_elevator_scan",
+      "winning_card_domain": "operations_research",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "logistics_elevator_scan",
+          "card_domain": "operations_research",
+          "retrieval_score": 0.7588273041102498,
+          "applicable": true,
+          "passed": true,
+          "score": -1357,
+          "detail": "total_distance=1357ft over 12 stops (limit 1700ft)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: minimizing total travel distance by servicing requests in positional order; storing and retrieving values by direct indexed position; distributing decision making so no single point of failure exists. Candidate mechanism (abstracted from 'SCAN / Elevator Servicing', domain=operations_research): Given pending requests at positions along a 1-D line and an agent that starts at some position, minimize total travel distance: sweep monotonically in the current direction, servicing every pending request encountered along the way, then reverse at the end of the line and sweep back. This bounds the worst-case back[domain-specific term removed]ing that a pure nearest-request-first rule suffers when requests keep appearing on alternating sides."
+        }
+      ]
+    },
+    {
+      "problem_id": "server_bin_packing",
+      "condition": "lcd_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "art_rule_of_thirds",
+          "card_domain": "visual_art",
+          "retrieval_score": 0.3995956529262191,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Rule of Thirds Composition', domain=visual_art): Distribute visual emphasis away from the exact center to create dynamic balance."
+        }
+      ]
+    },
+    {
+      "problem_id": "replication_broadcast",
+      "condition": "lcd_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_central_fanout_broadcast",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.7459339808375572,
+          "applicable": true,
+          "passed": false,
+          "score": 0.075,
+          "detail": "coverage=7.50% (3/40 nodes), limit 85%",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: achieving robustness to random node or participant failure without central coordination; maintaining a target value despite external disturbances via corrective feedback; storing and retrieving values by direct indexed position. Candidate mechanism (abstracted from 'Central Fan-Out Broadcast', domain=software_engineering): The origin node sends the update directly to every other node in one round; there is no retry or relay by recipients."
+        }
+      ]
+    },
+    {
+      "problem_id": "network_load_diffusion",
+      "condition": "lcd_top1",
+      "passed": true,
+      "winning_card_id": "physics_heat_diffusion",
+      "winning_card_domain": "physics",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "physics_heat_diffusion",
+          "card_domain": "physics",
+          "retrieval_score": 0.8383547868864567,
+          "applicable": true,
+          "passed": true,
+          "score": -7.52028143311533,
+          "detail": "stdev=7.5 (limit 60.0), conserved_total=True",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Heat Diffusion and Discrete Laplacian Smoothing', domain=physics): Given a quantity distributed unevenly across nodes of a network, where each node can only see its direct neighbors, equalize the distribution by repeatedly setting each node's value to a weighted average of its own value and its neighbors' values. No global coordinator or global view is required; repeated local averaging alone drives the system toward equilibrium."
+        }
+      ]
+    },
+    {
+      "problem_id": "starvation_free_scheduling",
+      "condition": "lcd_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_strict_priority_queue",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.8016321570013014,
+          "applicable": true,
+          "passed": false,
+          "score": -3000,
+          "detail": "important_task_wait=inf ticks (limit 50), served_tick=None",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding worst case wait time for low priority requesters; converting a continuous physical process into a discrete control rule; processing each item exactly once with bounded memory. Candidate mechanism (abstracted from 'Strict Priority Queue Scheduling', domain=software_engineering): Maintain tasks in strict priority order; always dispatch the highest-priority ready task; priority never changes while a task waits."
+        }
+      ]
+    },
+    {
+      "problem_id": "adaptive_routing",
+      "condition": "lcd_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "geology_plate_tectonics",
+          "card_domain": "geology",
+          "retrieval_score": 0.8832438593091709,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Subduction Zones', domain=geology): Where two bulk masses of different density meet, the denser one slides beneath the other, releasing accumulated stress at the boundary."
+        }
+      ]
+    },
+    {
+      "problem_id": "anomaly_detection_no_labels",
+      "condition": "lcd_top1",
+      "passed": true,
+      "winning_card_id": "immunology_negative_selection",
+      "winning_card_domain": "immunology",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "immunology_negative_selection",
+          "card_domain": "immunology",
+          "retrieval_score": 0.7849816120656127,
+          "applicable": true,
+          "passed": true,
+          "score": 0.915,
+          "detail": "detection_rate=100.00% (need >=90%), false_positive_rate=8.50% (need <=20%)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: detecting anomalies by characterizing what is normal rather than what is abnormal; generating negative examples that do not match any known good pattern; accumulating past error over time to eliminate steady state offset. Candidate mechanism (abstracted from 'Immune Negative Selection', domain=immunology): Given only examples of 'normal' patterns and no labeled examples of anomalies, detect novel anomalies as follows: generate a large population of random candidate detectors; discard any detector that matches (is too similar to) any normal training example; keep the surviving detectors. At test time, flag any new pattern that matches one or more surviving detectors as anomalous. This requires no labeled anomaly data and can catch structurally unusual patterns that a simple numeric threshold on summary statistics would miss."
+        }
+      ]
+    },
+    {
+      "problem_id": "producer_consumer_oscillation",
+      "condition": "lcd_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_static_shortest_path",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.4701432408229885,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a moving population near a stable equilibrium; selecting survivors probabilistically in proportion to fitness; converting a continuous physical process into a discrete control rule. Candidate mechanism (abstracted from 'Precomputed Static Shortest-Path Table', domain=software_engineering): Compute the globally optimal [domain-specific term removed] once from a fixed snapshot of costs, then reuse it for all future requests without updating it."
+        }
+      ]
+    },
+    {
+      "problem_id": "admission_control_congestion_collapse",
+      "condition": "lcd_top1",
+      "passed": true,
+      "winning_card_id": "transportation_ramp_metering",
+      "winning_card_domain": "transportation_engineering",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "transportation_ramp_metering",
+          "card_domain": "transportation_engineering",
+          "retrieval_score": 0.850606366240122,
+          "applicable": true,
+          "passed": true,
+          "score": 1460.0,
+          "detail": "total_completed=1460.0 over 150 ticks (need >=1300)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: avoiding congestive collapse where throughput drops under overload; limiting admission into a system to match downstream service capacity; minimizing total travel distance by servicing requests in positional order. Candidate mechanism (abstracted from 'Highway Ramp Metering', domain=transportation_engineering): Given a shared downstream resource with a known service rate, where accepting every incoming request immediately causes throughput to collapse under overload (a [domain-specific term removed] from thrashing/contention), admit requests at a rate that matches downstream capacity and hold or reject the rest at the point of entry, rather than admitting everything and letting congestion form inside the system. This keeps achieved throughput near capacity even as offered load grows far past it."
+        }
+      ]
+    },
+    {
+      "problem_id": "stale_value_consensus",
+      "condition": "lcd_top1",
+      "passed": true,
+      "winning_card_id": "social_choice_quorum_voting",
+      "winning_card_domain": "social_choice_theory",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "social_choice_quorum_voting",
+          "card_domain": "social_choice_theory",
+          "retrieval_score": 0.6938109692165007,
+          "applicable": true,
+          "passed": true,
+          "score": 1.0,
+          "detail": "accuracy=100% (20/20 scenarios), need >=90%",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: tolerating a minority of stale or delayed participants; looking up a value quickly by repeatedly halving a sorted search range; letting a signal evaporate over time so stale information is forgotten. Candidate mechanism (abstracted from 'Majority Quorum Voting', domain=social_choice_theory): Given several participants reporting possibly conflicting values, where deciding by whichever value arrived last is vulnerable to network delay putting a stale or minority value last, decide instead by collecting reports from a [domain-specific term removed] (more than half) of participants and selecting the value held by the majority of that [domain-specific term removed]. This is robust to a minority of participants being delayed or holding stale values."
+        }
+      ]
+    },
+    {
+      "problem_id": "naive_sufficient_lookup",
+      "condition": "lcd_top1",
+      "passed": true,
+      "winning_card_id": "cs_binary_search",
+      "winning_card_domain": "computer_science",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "cs_binary_search",
+          "card_domain": "computer_science",
+          "retrieval_score": 0.8105466129722925,
+          "applicable": true,
+          "passed": true,
+          "score": -15.766666666666667,
+          "detail": "avg_comparisons=15.8 (limit 25), correct=30/30",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: looking up a value quickly by repeatedly halving a sorted search range; exploring a large combinatorial search space without exhaustive enumeration; resolving conflicting values by consulting a majority rather than the most recent. Candidate mechanism (abstracted from 'Binary Search', domain=computer_science): Given a sorted, randomly-indexable collection and a target value, find it (or determine its absence) in O([domain-specific term removed]) comparisons by repeatedly comparing against the [domain-specific term removed] of the current range and discarding the half that cannot contain the target."
+        }
+      ]
+    },
+    {
+      "problem_id": "impossible_sort_probe",
+      "condition": "lcd_top1",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "geology_plate_tectonics",
+          "card_domain": "geology",
+          "retrieval_score": 0.42938716746743594,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Subduction Zones', domain=geology): Where two bulk masses of different density meet, the denser one slides beneath the other, releasing accumulated stress at the boundary."
+        }
+      ]
+    }
+  ],
+  "lcd_convergence": [
+    {
+      "problem_id": "autoscaler_oscillation",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "control_theory_pid",
+      "winning_card_domain": "control_theory",
+      "winning_cross_domain": true,
+      "num_attempts": 3,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "sports_zone_defense",
+          "card_domain": "sports",
+          "retrieval_score": 0.6484762631147909,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'Zone Defense', domain=sports): Assign responsibility by region rather than by specific target, handing off as the target crosses a region boundary."
+        },
+        {
+          "rank": 1,
+          "card_id": "architecture_flying_buttress",
+          "card_domain": "architecture",
+          "retrieval_score": 0.6248255730103687,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'The Flying Buttress', domain=architecture): Redirect a lateral structural load through an external support path so the primary enclosing structure can be lighter."
+        },
+        {
+          "rank": 2,
+          "card_id": "control_theory_pid",
+          "card_domain": "control_theory",
+          "retrieval_score": 0.5512568501841689,
+          "applicable": true,
+          "passed": true,
+          "score": -0.9507255457563413,
+          "detail": "MAE=0.95 vs threshold 6.5 (queue history sample: [10.0, 10.0, 24.0, 23.0, 7.0, 0, 4.699999999999999, 11.010000000000002, 12.083000000000006, 9.678899999999999, 8.111869999999996, 8.667620999999997])",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a target value despite external disturbances via corrective feedback; limiting admission into a system to match downstream service capacity; stabilizing a predator prey style oscillation with a capacity limiting term. Candidate mechanism (abstracted from 'PID Feedback Control', domain=control_theory): Given a measured quantity, a target [domain-specific term removed], and an [domain-specific term removed] whose effect on the quantity is delayed, maintain the target value despite disturbances via corrective feedback: compute error = target - measured; correction = Kp*error + Ki*sum(error over time) + Kd*(change in error); apply correction each tick. This damps oscillation that a simple threshold on/off rule produces when there is lag between action and effect."
+        }
+      ]
+    },
+    {
+      "problem_id": "streaming_sample",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "statistics_reservoir_sampling",
+      "winning_card_domain": "statistics",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "statistics_reservoir_sampling",
+          "card_domain": "statistics",
+          "retrieval_score": 0.6426745574894516,
+          "applicable": true,
+          "passed": true,
+          "score": -0.009654998779296875,
+          "detail": "valid=True peak_mem=0.01MB (limit 20.0MB), n=3000000, k=200",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: sampling a representative subset from a stream of unknown or unbounded length; propagating information through repeated random local contact; achieving robustness to random node or participant failure without central coordination. Candidate mechanism (abstracted from 'Reservoir Sampling', domain=statistics): Given a sequence that can only be read once, in order, of unknown total length, produce a uniformly random subset of size k using O(k) memory: keep the first k items; for the i-th subsequent item, replace a uniformly chosen slot with probability k/(i+1), else discard the item. Never materialize the full sequence."
+        }
+      ]
+    },
+    {
+      "problem_id": "warehouse_robot_picking",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "logistics_elevator_scan",
+      "winning_card_domain": "operations_research",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "logistics_elevator_scan",
+          "card_domain": "operations_research",
+          "retrieval_score": 0.7588273041102498,
+          "applicable": true,
+          "passed": true,
+          "score": -1357,
+          "detail": "total_distance=1357ft over 12 stops (limit 1700ft)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: minimizing total travel distance by servicing requests in positional order; storing and retrieving values by direct indexed position; distributing decision making so no single point of failure exists. Candidate mechanism (abstracted from 'SCAN / Elevator Servicing', domain=operations_research): Given pending requests at positions along a 1-D line and an agent that starts at some position, minimize total travel distance: sweep monotonically in the current direction, servicing every pending request encountered along the way, then reverse at the end of the line and sweep back. This bounds the worst-case back[domain-specific term removed]ing that a pure nearest-request-first rule suffers when requests keep appearing on alternating sides."
+        }
+      ]
+    },
+    {
+      "problem_id": "server_bin_packing",
+      "condition": "lcd_convergence",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 5,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "art_rule_of_thirds",
+          "card_domain": "visual_art",
+          "retrieval_score": 0.3995956529262191,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Rule of Thirds Composition', domain=visual_art): Distribute visual emphasis away from the exact center to create dynamic balance."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_admit_all_retry",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.3967089723655388,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Admit-All With Client Retry', domain=software_engineering): Accept every request on arrival regardless of current load; rely on downstream [domain-specific term removed]s and client retries to eventually get through."
+        },
+        {
+          "rank": 2,
+          "card_id": "cs_binary_search",
+          "card_domain": "computer_science",
+          "retrieval_score": 0.30550365214333536,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Binary Search', domain=computer_science): Given a sorted, randomly-indexable collection and a target value, find it (or determine its absence) in O([domain-specific term removed]) comparisons by repeatedly comparing against the [domain-specific term removed] of the current range and discarding the half that cannot contain the target."
+        },
+        {
+          "rank": 3,
+          "card_id": "se_first_fit_decreasing",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.2913662065584509,
+          "applicable": true,
+          "passed": false,
+          "score": -20.0,
+          "detail": "makespan=20.0 (optimal=17, limit 18), loads=[20.0, 15.0, 15.0]",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'First-Fit-Decreasing Bin Packing', domain=software_engineering): Sort items by decreasing size; place each item greedily into the currently-best-fitting bin; never reconsider a placement."
+        },
+        {
+          "rank": 4,
+          "card_id": "textile_weaving_patterns",
+          "card_domain": "textiles",
+          "retrieval_score": 0.28115872001611925,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; requiring agreement from more than half of participants before committing; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Weave Patterns', domain=textiles): Vary a repeating local interleaving pattern to change the aggregate properties of the resulting structure."
+        }
+      ]
+    },
+    {
+      "problem_id": "replication_broadcast",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "epidemiology_sir_gossip",
+      "winning_card_domain": "epidemiology",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_central_fanout_broadcast",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.7459339808375572,
+          "applicable": true,
+          "passed": false,
+          "score": 0.075,
+          "detail": "coverage=7.50% (3/40 nodes), limit 85%",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: achieving robustness to random node or participant failure without central coordination; maintaining a target value despite external disturbances via corrective feedback; storing and retrieving values by direct indexed position. Candidate mechanism (abstracted from 'Central Fan-Out Broadcast', domain=software_engineering): The origin node sends the update directly to every other node in one round; there is no retry or relay by recipients."
+        },
+        {
+          "rank": 1,
+          "card_id": "epidemiology_sir_gossip",
+          "card_domain": "epidemiology",
+          "retrieval_score": 0.6620359398062724,
+          "applicable": true,
+          "passed": true,
+          "score": 1.0,
+          "detail": "coverage=100.00% (40/40 nodes), limit 85%",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: achieving robustness to random node or participant failure without central coordination; maintaining a target value despite external disturbances via corrective feedback; storing and retrieving values by direct indexed position. Candidate mechanism (abstracted from 'Epidemic Spread and Herd Coverage', domain=epidemiology): Given a population of nodes and one origin holding an update, where any node can be transiently unreachable in a given round and there is no reliable central broadcaster, propagate the update to (nearly) everyone by having every node that already holds the update forward it to a small number of random peers each round, repeated over multiple rounds. Reachability failures in one round are compensated for by further chances in subsequent rounds, so coverage approaches 100% probabilistically rather than requiring any single round to succeed."
+        }
+      ]
+    },
+    {
+      "problem_id": "network_load_diffusion",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "physics_heat_diffusion",
+      "winning_card_domain": "physics",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "physics_heat_diffusion",
+          "card_domain": "physics",
+          "retrieval_score": 0.8383547868864567,
+          "applicable": true,
+          "passed": true,
+          "score": -7.52028143311533,
+          "detail": "stdev=7.5 (limit 60.0), conserved_total=True",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: converging toward balance without any global view of the whole system; equalizing an unevenly distributed quantity through local neighbor averaging; modeling diffusion of a quantity across a network as repeated smoothing. Candidate mechanism (abstracted from 'Heat Diffusion and Discrete Laplacian Smoothing', domain=physics): Given a quantity distributed unevenly across nodes of a network, where each node can only see its direct neighbors, equalize the distribution by repeatedly setting each node's value to a weighted average of its own value and its neighbors' values. No global coordinator or global view is required; repeated local averaging alone drives the system toward equilibrium."
+        }
+      ]
+    },
+    {
+      "problem_id": "starvation_free_scheduling",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "economics_congestion_pricing_aging",
+      "winning_card_domain": "economics",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_strict_priority_queue",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.8016321570013014,
+          "applicable": true,
+          "passed": false,
+          "score": -3000,
+          "detail": "important_task_wait=inf ticks (limit 50), served_tick=None",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding worst case wait time for low priority requesters; converting a continuous physical process into a discrete control rule; processing each item exactly once with bounded memory. Candidate mechanism (abstracted from 'Strict Priority Queue Scheduling', domain=software_engineering): Maintain tasks in strict priority order; always dispatch the highest-priority ready task; priority never changes while a task waits."
+        },
+        {
+          "rank": 1,
+          "card_id": "economics_congestion_pricing_aging",
+          "card_domain": "economics",
+          "retrieval_score": 0.6769211467926509,
+          "applicable": true,
+          "passed": true,
+          "score": -4,
+          "detail": "important_task_wait=4 ticks (limit 50), served_tick=4",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: bounding worst case wait time for low priority requesters; converting a continuous physical process into a discrete control rule; processing each item exactly once with bounded memory. Candidate mechanism (abstracted from 'Congestion Pricing and Willingness-to-Pay Allocation', domain=economics): Given many requesters competing for one shared resource, each with a base value and an arrival time, where serving strictly by fixed value or fixed class can starve some requesters indefinitely, allocate the resource each round to the requester with the highest effective bid, where effective bid = base value + (waiting time) * (escalation rate). This guarantees every requester's effective bid eventually dominates, bounding worst-case wait time, while still respecting relative value."
+        }
+      ]
+    },
+    {
+      "problem_id": "adaptive_routing",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "entomology_ant_colony",
+      "winning_card_domain": "entomology",
+      "winning_cross_domain": true,
+      "num_attempts": 3,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "geology_plate_tectonics",
+          "card_domain": "geology",
+          "retrieval_score": 0.8832438593091709,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Subduction Zones', domain=geology): Where two bulk masses of different density meet, the denser one slides beneath the other, releasing accumulated stress at the boundary."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_static_shortest_path",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.5000161290098412,
+          "applicable": true,
+          "passed": false,
+          "score": -20.0,
+          "detail": "avg_cost_last_50_trips=20.00 (limit 8.0)",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Precomputed Static Shortest-Path Table', domain=software_engineering): Compute the globally optimal [domain-specific term removed] once from a fixed snapshot of costs, then reuse it for all future requests without updating it."
+        },
+        {
+          "rank": 2,
+          "card_id": "entomology_ant_colony",
+          "card_domain": "entomology",
+          "retrieval_score": 0.4024170985322849,
+          "applicable": true,
+          "passed": true,
+          "score": -4.8,
+          "detail": "avg_cost_last_50_trips=4.80 (limit 8.0)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: adapting routing or choice probabilistically based on accumulated feedback; converging toward balance without any global view of the whole system; rejecting excess load early rather than accepting all and degrading later. Candidate mechanism (abstracted from 'Ant Foraging and Stigmergic Trails', domain=entomology): Given a network whose edge costs change over time and must be routed over repeatedly, adapt routing without recomputing a full global shortest path each time: maintain a trail strength per edge; each trip, choose a path probabilistically favoring higher-trail edges, then reinforce the edges used in proportion to how good the trip was; evaporate all trail strengths slightly every round. This lets routing drift toward newly-cheap edges and away from newly-congested ones using only local, indirect feedback."
+        }
+      ]
+    },
+    {
+      "problem_id": "anomaly_detection_no_labels",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "immunology_negative_selection",
+      "winning_card_domain": "immunology",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "immunology_negative_selection",
+          "card_domain": "immunology",
+          "retrieval_score": 0.7849816120656127,
+          "applicable": true,
+          "passed": true,
+          "score": 0.915,
+          "detail": "detection_rate=100.00% (need >=90%), false_positive_rate=8.50% (need <=20%)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: detecting anomalies by characterizing what is normal rather than what is abnormal; generating negative examples that do not match any known good pattern; accumulating past error over time to eliminate steady state offset. Candidate mechanism (abstracted from 'Immune Negative Selection', domain=immunology): Given only examples of 'normal' patterns and no labeled examples of anomalies, detect novel anomalies as follows: generate a large population of random candidate detectors; discard any detector that matches (is too similar to) any normal training example; keep the surviving detectors. At test time, flag any new pattern that matches one or more surviving detectors as anomalous. This requires no labeled anomaly data and can catch structurally unusual patterns that a simple numeric threshold on summary statistics would miss."
+        }
+      ]
+    },
+    {
+      "problem_id": "producer_consumer_oscillation",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "ecology_predator_prey_damping",
+      "winning_card_domain": "ecology",
+      "winning_cross_domain": true,
+      "num_attempts": 2,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "se_static_shortest_path",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.4701432408229885,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a moving population near a stable equilibrium; selecting survivors probabilistically in proportion to fitness; converting a continuous physical process into a discrete control rule. Candidate mechanism (abstracted from 'Precomputed Static Shortest-Path Table', domain=software_engineering): Compute the globally optimal [domain-specific term removed] once from a fixed snapshot of costs, then reuse it for all future requests without updating it."
+        },
+        {
+          "rank": 1,
+          "card_id": "ecology_predator_prey_damping",
+          "card_domain": "ecology",
+          "retrieval_score": 0.20070269865601298,
+          "applicable": true,
+          "passed": true,
+          "score": -0.00019050094550543406,
+          "detail": "late_stage_amplitude=0.00 (limit 5.0), stdev=0.00",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: maintaining a moving population near a stable equilibrium; selecting survivors probabilistically in proportion to fitness; converting a continuous physical process into a discrete control rule. Candidate mechanism (abstracted from 'Predator-Prey Dynamics and Carrying Capacity', domain=ecology): Given two coupled quantities that each grow or shrink purely in reaction to the other's current level (producing sustained oscillation), stabilize the system by adding a self-limiting term to each population's growth rule that caps its growth rate as it approaches a fixed capacity ceiling, independent of the other quantity's momentary level. This damps the reactive boom-bust cycle into a stable equilibrium."
+        }
+      ]
+    },
+    {
+      "problem_id": "admission_control_congestion_collapse",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "transportation_ramp_metering",
+      "winning_card_domain": "transportation_engineering",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "transportation_ramp_metering",
+          "card_domain": "transportation_engineering",
+          "retrieval_score": 0.850606366240122,
+          "applicable": true,
+          "passed": true,
+          "score": 1460.0,
+          "detail": "total_completed=1460.0 over 150 ticks (need >=1300)",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: avoiding congestive collapse where throughput drops under overload; limiting admission into a system to match downstream service capacity; minimizing total travel distance by servicing requests in positional order. Candidate mechanism (abstracted from 'Highway Ramp Metering', domain=transportation_engineering): Given a shared downstream resource with a known service rate, where accepting every incoming request immediately causes throughput to collapse under overload (a [domain-specific term removed] from thrashing/contention), admit requests at a rate that matches downstream capacity and hold or reject the rest at the point of entry, rather than admitting everything and letting congestion form inside the system. This keeps achieved throughput near capacity even as offered load grows far past it."
+        }
+      ]
+    },
+    {
+      "problem_id": "stale_value_consensus",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "social_choice_quorum_voting",
+      "winning_card_domain": "social_choice_theory",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "social_choice_quorum_voting",
+          "card_domain": "social_choice_theory",
+          "retrieval_score": 0.6938109692165007,
+          "applicable": true,
+          "passed": true,
+          "score": 1.0,
+          "detail": "accuracy=100% (20/20 scenarios), need >=90%",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: tolerating a minority of stale or delayed participants; looking up a value quickly by repeatedly halving a sorted search range; letting a signal evaporate over time so stale information is forgotten. Candidate mechanism (abstracted from 'Majority Quorum Voting', domain=social_choice_theory): Given several participants reporting possibly conflicting values, where deciding by whichever value arrived last is vulnerable to network delay putting a stale or minority value last, decide instead by collecting reports from a [domain-specific term removed] (more than half) of participants and selecting the value held by the majority of that [domain-specific term removed]. This is robust to a minority of participants being delayed or holding stale values."
+        }
+      ]
+    },
+    {
+      "problem_id": "naive_sufficient_lookup",
+      "condition": "lcd_convergence",
+      "passed": true,
+      "winning_card_id": "cs_binary_search",
+      "winning_card_domain": "computer_science",
+      "winning_cross_domain": true,
+      "num_attempts": 1,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "cs_binary_search",
+          "card_domain": "computer_science",
+          "retrieval_score": 0.8105466129722925,
+          "applicable": true,
+          "passed": true,
+          "score": -15.766666666666667,
+          "detail": "avg_comparisons=15.8 (limit 25), correct=30/30",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: looking up a value quickly by repeatedly halving a sorted search range; exploring a large combinatorial search space without exhaustive enumeration; resolving conflicting values by consulting a majority rather than the most recent. Candidate mechanism (abstracted from 'Binary Search', domain=computer_science): Given a sorted, randomly-indexable collection and a target value, find it (or determine its absence) in O([domain-specific term removed]) comparisons by repeatedly comparing against the [domain-specific term removed] of the current range and discarding the half that cannot contain the target."
+        }
+      ]
+    },
+    {
+      "problem_id": "impossible_sort_probe",
+      "condition": "lcd_convergence",
+      "passed": false,
+      "winning_card_id": null,
+      "winning_card_domain": null,
+      "winning_cross_domain": null,
+      "num_attempts": 5,
+      "attempts": [
+        {
+          "rank": 0,
+          "card_id": "geology_plate_tectonics",
+          "card_domain": "geology",
+          "retrieval_score": 0.42938716746743594,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Subduction Zones', domain=geology): Where two bulk masses of different density meet, the denser one slides beneath the other, releasing accumulated stress at the boundary."
+        },
+        {
+          "rank": 1,
+          "card_id": "se_linear_scan",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.4021364721777054,
+          "applicable": true,
+          "passed": false,
+          "score": -1225,
+          "detail": "comparisons=1225 (impossible budget <= 50), correctly_sorted=True",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Linear Scan Lookup', domain=software_engineering): Check membership by comparing the target against every element in sequence until found or exhausted; O(n) comparisons worst case."
+        },
+        {
+          "rank": 2,
+          "card_id": "se_last_write_wins",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.36237517735218266,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Last-Write-Wins Conflict Resolution', domain=software_engineering): Among conflicting reported values, keep whichever carries the latest [domain-specific term removed] and discard the others; never consult how many [domain-specific term removed]s hold each value."
+        },
+        {
+          "rank": 3,
+          "card_id": "se_materialize_then_sample",
+          "card_domain": "software_engineering",
+          "retrieval_score": 0.3569884208100367,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": false,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'Collect-Then-Sample', domain=software_engineering): Materialize the entire input into memory, then sample uniformly from the materialized collection."
+        },
+        {
+          "rank": 4,
+          "card_id": "logistics_elevator_scan",
+          "card_domain": "operations_research",
+          "retrieval_score": 0.3429413922152163,
+          "applicable": false,
+          "passed": false,
+          "score": 0.0,
+          "detail": "not_applicable: no transfer path implemented for this mechanism",
+          "cross_domain": true,
+          "transfer_rationale": "Problem projects most strongly onto: bounding the worst case for an adversarially ordered input; adapting routing or choice probabilistically based on accumulated feedback; preserving uniform probability of inclusion as more items arrive. Candidate mechanism (abstracted from 'SCAN / Elevator Servicing', domain=operations_research): Given pending requests at positions along a 1-D line and an agent that starts at some position, minimize total travel distance: sweep monotonically in the current direction, servicing every pending request encountered along the way, then reverse at the end of the line and sweep back. This bounds the worst-case back[domain-specific term removed]ing that a pure nearest-request-first rule suffers when requests keep appearing on alternating sides."
+        }
+      ]
+    }
+  ]
+}
